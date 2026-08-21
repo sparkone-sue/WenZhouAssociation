@@ -689,6 +689,146 @@
   .join-qr{width:155px;height:155px}
 }
 
+
+    .gallery-grid-v10{
+      grid-template-columns:repeat(3,1fr);
+      grid-template-rows:none;
+      gap:18px;
+    }
+    .gallery-grid-v10 .gallery-item,
+    .gallery-grid-v10 .gallery-item:first-child{
+      grid-row:auto;
+      min-height:260px;
+      aspect-ratio:4/3;
+    }
+    .gallery-grid-v10 .gallery-item img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    @media(max-width:900px){
+      .gallery-grid-v10{grid-template-columns:1fr 1fr;gap:14px}
+      .gallery-grid-v10 .gallery-item,
+      .gallery-grid-v10 .gallery-item:first-child{min-height:220px}
+    }
+    @media(max-width:560px){
+      .gallery-grid-v10{grid-template-columns:1fr}
+      .gallery-grid-v10 .gallery-item,
+      .gallery-grid-v10 .gallery-item:first-child{min-height:220px}
+    }
+
+
+/* ===== V11 gallery heading + join QR cleanup ===== */
+.gallery-head{
+  grid-template-columns:minmax(420px,.9fr) minmax(0,1.25fr);
+  align-items:end;
+  column-gap:56px;
+}
+.gallery-head h2{
+  max-width:620px;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+.gallery-head h2 .zh{white-space:normal}
+
+/* QR is not available yet: keep Join Us as a clean single-column contact area */
+.join-v5{
+  grid-template-columns:minmax(0,760px);
+  justify-content:center;
+}
+.join-contact{
+  max-width:760px;
+}
+.join-qr{display:none!important}
+
+@media(max-width:900px){
+  .gallery-head{
+    grid-template-columns:1fr;
+    gap:16px;
+    align-items:start;
+  }
+  .gallery-head h2{
+    max-width:none;
+    font-size:2.15rem;
+  }
+  .join-v5{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ===== V13 Join Us layout refinement ===== */
+.join-v5{
+  width:min(calc(100% - 40px),var(--max));
+  margin:0 auto;
+  grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);
+  gap:64px;
+  padding:68px 0;
+  background:transparent;
+  border-top:1px solid #dfebf6;
+  border-bottom:1px solid #dfebf6;
+}
+.join-contact{
+  border-left:1px solid #d8e4ef;
+  padding-left:52px;
+  max-width:none;
+  text-align:center;
+}
+.join-logo-panel{
+  width:230px;
+  height:230px;
+  margin:0 auto 26px;
+  border-radius:24px;
+  background:#f5f9fd;
+  border:1px solid #d9e7f4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+.join-logo-panel img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.join-contact-note{
+  color:#667085;
+  font-size:.94rem;
+  line-height:1.7;
+  max-width:420px;
+  margin:0 auto 18px;
+}
+.join-contact .btn{
+  min-width:190px;
+}
+@media(max-width:900px){
+  .join-v5{
+    width:min(calc(100% - 28px),var(--max));
+    grid-template-columns:1fr;
+    gap:38px;
+    padding:54px 0;
+  }
+  .join-contact{
+    border-left:0;
+    border-top:1px solid #d8e4ef;
+    padding-left:0;
+    padding-top:34px;
+  }
+  .join-logo-panel{
+    width:180px;
+    height:180px;
+    padding:22px;
+  }
+}
+@media(max-width:480px){
+  .join-v5{
+    width:min(calc(100% - 22px),var(--max));
+  }
+  .join-logo-panel{
+    width:155px;
+    height:155px;
+    border-radius:18px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -847,10 +987,9 @@
             <span class="en">This autumn, the Wenzhou Association of Ontario warmly invites Wenzhou families and friends to come together for an evening of good food, familiar faces and hometown connection. No matter how long you have called Canada home, you are always welcome to gather with the community.</span>
           </p>
           <div class="event-meta">
-            <span><span class="zh">日期：2026年9月16日</span><span class="en">Date: September 16, 2026</span></span>
+            <span><span class="zh">日期：2026年9月19日</span><span class="en">Date: September 19, 2026</span></span>
             <span><span class="zh">时间：6:00 PM – 10:00 PM</span><span class="en">Time: 6:00 PM – 10:00 PM</span></span>
             <span><span class="zh">地点：世纪豪宴 Century Banquet Restaurant</span><span class="en">Venue: Century Banquet Restaurant</span></span>
-          <span><span class="zh">地址：398 Ferrier St, Markham, ON L3R 2Z5</span><span class="en">Address: 398 Ferrier St, Markham, ON L3R 2Z5</span></span>
           </div>
           <div>
             <a class="btn btn-primary" href="tel:6478367123"><span class="zh">电话报名：647-836-7123</span><span class="en">Register by Phone: 647-836-7123</span></a><span class="en">Registration Coming Soon</span></span>
@@ -880,31 +1019,45 @@
   </section>
 
 
+  
   <section class="section section-soft" id="journey">
     <div class="container">
       <div class="gallery-head">
         <div>
           <div class="eyebrow reveal"><span class="zh">我们相聚的每一个时刻</span><span class="en">Every Moment We Share</span></div>
-          <h2 class="reveal"><span class="zh">2024 · 成立庆典</span><span class="en">2024 · Inauguration Celebration</span></h2>
+          <h2 class="reveal"><span class="zh">往期活动 · 共同回忆</span><span class="en">Past Events · Shared Memories</span></h2>
         </div>
         <p class="lead reveal"><span class="zh">每一次相聚，都是乡情最好的延续。我们记录的不只是活动，更是一段段属于温州乡亲的共同回忆。</span><span class="en">Every gathering keeps our hometown connection alive. These are more than events—they are shared memories that belong to our community.</span></p>
       </div>
-      <div class="gallery-grid">
+      <div class="gallery-grid gallery-grid-v10">
+        <figure class="gallery-item reveal">
+          <img src="assets/gallery-2026-bbq.jpg" alt="温州同乡会夏日BBQ">
+          <figcaption class="gallery-label"><span class="zh">2026 夏日 BBQ</span><span class="en">2026 Summer BBQ</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/gallery-2025-midautumn.jpg" alt="温州同乡会2025中秋周年庆典">
+          <figcaption class="gallery-label"><span class="zh">2025 中秋周年庆典</span><span class="en">2025 Mid-Autumn Anniversary</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/gallery-community-dinner.jpg" alt="温州同乡会乡亲聚会">
+          <figcaption class="gallery-label"><span class="zh">乡亲聚会</span><span class="en">Community Gathering</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/gallery-summer-event.jpg" alt="温州同乡会户外活动">
+          <figcaption class="gallery-label"><span class="zh">户外联谊</span><span class="en">Outdoor Gathering</span></figcaption>
+        </figure>
         <figure class="gallery-item reveal">
           <img src="assets/event-dinner.jpg" alt="2024温州同乡会成立庆典现场">
-          <figcaption class="gallery-label"><span class="zh">成立庆典现场</span><span class="en">Inauguration Dinner</span></figcaption>
+          <figcaption class="gallery-label"><span class="zh">2024 成立庆典</span><span class="en">2024 Inauguration Dinner</span></figcaption>
         </figure>
         <figure class="gallery-item reveal">
           <img src="assets/event-group.jpg" alt="2024温州同乡会成立庆典大合照">
-          <figcaption class="gallery-label"><span class="zh">嘉宾与理事合影</span><span class="en">Members & Guests</span></figcaption>
-        </figure>
-        <figure class="gallery-item reveal">
-          <img src="assets/event-sponsors.jpg" alt="2024温州同乡会合作伙伴背景墙">
-          <figcaption class="gallery-label"><span class="zh">合作伙伴支持</span><span class="en">Community Partners</span></figcaption>
+          <figcaption class="gallery-label"><span class="zh">2024 嘉宾与理事合影</span><span class="en">2024 Members & Guests</span></figcaption>
         </figure>
       </div>
     </div>
   </section>
+
 
   <section class="section" id="partners">
     <div class="container">
@@ -945,15 +1098,22 @@
           </div>
         </div>
       </div>
+      
       <aside class="join-contact reveal">
-        <div class="join-qr"><span class="zh">微信群二维码占位</span><span class="en">WeChat QR Placeholder</span></div>
+        <div class="join-logo-panel">
+          <img src="assets/logo-transparent.png" alt="温州同乡会 Logo">
+        </div>
         <h3><span class="zh">欢迎加入温州乡亲大家庭</span><span class="en">Join the Wenzhou community</span></h3>
+        <p class="join-contact-note">
+          <span class="zh">如果您希望加入同乡会、了解活动或与我们取得联系，欢迎直接通过电话或邮箱联系我们。</span>
+          <span class="en">To join the association, learn about upcoming events or get in touch with us, please contact us directly by phone or email.</span>
+        </p>
         <div class="contact-meta">
           <span><strong><span class="zh">邮箱：</span><span class="en">Email: </span></strong>wao2024@aol.com</span>
           <span><strong><span class="zh">电话：</span><span class="en">Phone: </span></strong>647-836-7123</span>
         </div>
-        <a class="btn" href="mailto:wao2024@aol.com"><span class="zh">通过邮件联系我们</span><span class="en">Contact Us by Email</span></a>
       </aside>
+
     </div>
   </section>
 
@@ -987,7 +1147,6 @@
       <div class="footer-col">
         <h4><span class="zh">联系我们</span><span class="en">Contact</span></h4>
         <div class="footer-links">
-          <span><span class="zh">地址：</span><span class="en">Address: </span>[Placeholder Address]</span>
           <span><span class="zh">邮箱：</span><span class="en">Email: </span>wao2024@aol.com</span>
           <span><span class="zh">电话：</span><span class="en">Phone: </span>647-836-7123</span>
         </div>
