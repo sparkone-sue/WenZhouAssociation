@@ -868,6 +868,25 @@
   }
 }
 
+
+/* ===== V18.1 gallery layout correction ===== */
+@media(min-width:901px){
+  .gallery-grid-v10{
+    align-items:start;
+  }
+  .gallery-grid-v10 .gallery-item:first-child{
+    grid-column:auto!important;
+    aspect-ratio:4/3!important;
+    min-height:0!important;
+  }
+  .gallery-grid-v10 .gallery-item:first-child img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+}
+
 </style>
 </head>
 <body>
