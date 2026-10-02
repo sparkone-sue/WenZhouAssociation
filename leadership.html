@@ -66,7 +66,7 @@ const data=[
 ["理事长","Chair of the Board",["水寿松"]],
 ["副会长","Vice Presidents",["Tracy Li｜副会长兼秘书长","April Sun","朱轶才（Jason Zhu）","朱晓忠（Mark Zhu）","张湘江"]],
 ["秘书处","Secretariat",["Michael Huang｜常务理事 / 副秘书长","诸爱芹（Julia Zhu）｜副秘书长"]],
-["常务理事","Executive Directors",["Freya Cai","Connie Chen","Raymond Chen","丁力","Kevin He","Peter Jin","刘锴","吕成杰","Jay Li","马利忠（Alex Ma）","Zhenrui Qiu（Rick Qiu）","孙光勉（Jack Sun）","Irene Wu","王蓓芷 Nancy","王勇","Roger Xu","余昌洪","Wayne Zhao","Merry Zheng"]],
+["常务理事","Executive Directors",["南冕 Jack","Freya Cai","Connie Chen","Raymond Chen","丁力","Kevin He","Peter Jin","刘锴","吕成杰","Jay Li","马利忠（Alex Ma）","Zhenrui Qiu（Rick Qiu）","孙光勉（Jack Sun）","Irene Wu","王蓓芷 Nancy","王勇","Roger Xu","余昌洪","Wayne Zhao","Merry Zheng"]],
 ["理事","Directors",["戴纯子（Sarah Dai）","Ji Min Nan","Veronica Pang","Vera Shui","唐文一","王迪（Andy Wang）","Joe Wu","吴培童","Justin Ye","蒋赤石","吴应培"]]
 ];
 const groups=document.getElementById('groups');data.forEach(([zh,en,names])=>{const s=document.createElement('section');s.className='group';s.innerHTML=`<h3 class="group-title"><span class="zh">${zh}</span><span class="en">${en}</span></h3><div class="cards">${names.map(n=>`<div class="card"><strong>${n.split('｜')[0]}</strong><span>${n.includes('｜')?n.split('｜')[1]:zh}</span></div>`).join('')}</div>`;groups.appendChild(s)});
